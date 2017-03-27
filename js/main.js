@@ -85,11 +85,11 @@ function startStream(stream) {
 
 function draw() {
      let frame = readFrame();
-
-    if (frame) {
-        replaceGreen(frame.data);
-        context.putImageData(frame, 0, 0);
-    }
+    //
+    // if (frame) {
+    //     replaceGreen(frame.data);
+    //     context.putImageData(frame, 0, 0);
+    // }
 
     drawBalls();
 
