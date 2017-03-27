@@ -1,0 +1,13 @@
+//TODO: Als bal de onderkant raakt, dan de bal laten verdwijnen
+
+//TODO: Score bijhouden
+
+//TODO: Ballen toevoegen
+
+//TODO: tijdgebonden spel?
+
+//TODO: Eindscherm met score
+
+//TODO: verbeterde interface
+
+//TODO: Screenshot maken en aan het eind kunnen delen
