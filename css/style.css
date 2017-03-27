@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+video, canvas {
+  margin-left: 100px;
+  margin-top: 10px;
+  position: absolute;
+}
+
+canvas {
+    z-index: 100;
+}
+
+.dg.ac {
+  z-index: 100 !important;
+  top: 10px !important;
+}
+
+.ball {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
