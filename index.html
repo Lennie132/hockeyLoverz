@@ -5,19 +5,21 @@
     <title>Webcam tracking</title>
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- tracking.js - color tracking -->
     <script src="plugins/tracking-min.js"></script>
-    <script src="plugins/dat.gui/build/dat.gui.min.js"></script>
-    <script src="plugins/stats.min.js"></script>
-    <script src="plugins/color_camera_gui.js"></script>
+    <!-- STATS - shows fps of video -->
+    <!--<script src="plugins/stats.min.js"></script>-->
 
 </head>
 <body>
 
 <video id="video" width="920" height="690" preload autoplay loop muted></video>
 <canvas id="canvas" width="920" height="690"></canvas>
-<video src="video/sample.mp4" width="920" height="690" autoplay></video>
+<!--<video src="media/sample.mp4" width="920" height="690" autoplay></video>-->
 
+<script src="js/score.js" type="application/javascript"></script>
 <script src="js/ball.js" type="application/javascript"></script>
+<script src="js/game.js" type="application/javascript"></script>
 <script src="js/main.js" type="application/javascript"></script>
 
 </body>
