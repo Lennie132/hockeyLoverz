@@ -1,8 +1,11 @@
 //TODO: Als bal de onderkant raakt, dan de bal laten verdwijnen
+De bal wordt verwijderd nu
 
 //TODO: Score bijhouden
+De score wordt bijgehouden en getoond bovenin het roze vlak
 
 //TODO: Ballen toevoegen
+Om de 2.30 seconde komt er een bal bij als er minder dan 15 ballen op het scherm zijn.
 
 //TODO: tijdgebonden spel?
 
