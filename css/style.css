@@ -18,9 +18,3 @@ canvas {
   z-index: 100 !important;
   top: 10px !important;
 }
-
-.ball {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-}
