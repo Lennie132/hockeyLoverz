@@ -7,15 +7,17 @@ class Ball {
     constructor(x, y, game) {
         this._game = game;
 
-        this._radius = 15;
+        this._radius = getRandomInt(12, 24);
+        //this._color = getRandomColor();
+        this._color = '#ffffff';
 
-        this._velocityX = 2;
-        this._velocityY = 1;
+        this._velocityX = getRandomInt(-7, 7);
+        this._velocityY = getRandomInt(1, 6);
         this._coordinateX = x;
         this._coordinateY = y;
 
-        this._gravity = 0.5;
-        this._traction = 0.8;
+        this._gravity = 0.6;
+        this._traction = 0.7;
         this._damping = 0.9;
     }
 
@@ -52,22 +54,12 @@ class Ball {
         this._velocityY = value;
     }
 
-    draw(canvas, context) {
-
-        this.checkBounds(canvas);
-
-        context.beginPath();
-        context.fillStyle = "#ffffff";
-        context.border = "black solid 3px";
-        context.arc(this.coordinateX, this.coordinateY, this._radius, 0, Math.PI * 2, false);
-        context.closePath();
-
-        context.fill();
-
-    }
     stickHit() {
-        this.velocityY = -this.velocityY * this._damping;
-        this.velocityX *= this._traction;
+        this.velocityY = -this.velocityY;
+
+        // Don't damp the ball
+        //this.velocityY = -this.velocityY * this._damping;
+        //this.velocityX *= this._traction;
     }
 
     checkBounds(canvas) {
@@ -97,5 +89,18 @@ class Ball {
 
         this.coordinateX += this.velocityX;
         this.coordinateY += this.velocityY;
+    }
+
+    draw(canvas, context) {
+
+        this.checkBounds(canvas);
+
+        context.fillStyle = this._color;
+        context.beginPath();
+        context.arc(this.coordinateX, this.coordinateY, this._radius, 0, Math.PI * 2, false);
+        context.closePath();
+        context.fill();
+
+
     }
 }
