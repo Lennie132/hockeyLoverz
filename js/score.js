@@ -6,6 +6,7 @@ class Score {
 
     constructor() {
         this._score = 0;
+        this._total = 0;
 
         this._width = 400;
         this._height = 60;
@@ -18,6 +19,14 @@ class Score {
 
     set score(value) {
         this._score = value;
+    }
+
+    get total() {
+        return this._total;
+    }
+
+    set total(value) {
+        this._total = value;
     }
 
     addPoint() {
