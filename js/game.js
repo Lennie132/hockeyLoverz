@@ -6,24 +6,30 @@ class Game {
 
     constructor() {
         this._balls = [];
-        this._timer = 0;
+        this._pause = false;
+        this._finished = false;
+        this._timer = 600;
 
         this._score = new Score();
+        this._round = new Round();
+        this._end = new End();
     }
 
-    draw(canvas, context) {
-        this._balls.forEach(ball => {
-            ball.draw(canvas, context);
-        });
+    get pause() {
+        return this._pause;
+    }
 
-        if (this._balls.length < 15 && this._timer % 150 === 0) {
-            let random = Math.floor(Math.random() * canvas.width - 40);
-            this._balls.push(new Ball(random, 100, this));
-        }
+    get finished() {
+        return this._finished;
+    }
 
-        this._score.draw(canvas, context);
-
-        this._timer++;
+    newRound() {
+        this._round.newRound();
+        this._score.total = this._score.total + this._score.score;
+        this._score.score = 0;
+        this._timer = 600;
+        this._balls = [];
+        this._pause = false;
     }
 
     destroyBall(ball) {
@@ -43,6 +49,38 @@ class Game {
                 }
             }
         });
+    }
+
+    draw(canvas, context) {
+        if (!this._finished) {
+            if (!this._pause) {
+                if (this._balls.length < 10 && this._timer % 50 === 0) {
+                    this._balls.push(new Ball(getRandomInt(1, canvas.width - 40), 100, this));
+                }
+
+                this._balls.forEach(ball => {
+                    ball.draw(canvas, context);
+                });
+
+                this._score.draw(canvas, context);
+
+                this._timer--;
+                if (this._timer === 0) {
+                    if (this._round.round === 3) {
+                        this._finished = true;
+                    } else {
+                        this._pause = true;
+                    }
+                }
+
+            } else {
+                this._round.draw(canvas, context, this._score);
+            }
+        } else {
+            this._score.total = this._score.total + this._score.score;
+            this._score.score = 0;
+            this._end.draw(canvas, context, this._score);
+        }
     }
 
 }

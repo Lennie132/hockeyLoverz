@@ -2,14 +2,14 @@
  * Created by Lennart on 26-03-17.
  */
 
+// let video = document.getElementById('video');
+let canvas = document.getElementById('canvas');
+let context = canvas.getContext('2d');
+let game = new Game(canvas, context);
+
 window.onload = () => {
-    let video = document.getElementById('video');
-    let canvas = document.getElementById('canvas');
-    let context = canvas.getContext('2d');
     let tracker = new tracking.ColorTracker(['yellow']);
     tracking.track('#video', tracker, {camera: true});
-
-    let game = new Game(canvas, context);
 
     // Game Time - loop
     tracker.on('track', event => {
@@ -18,7 +18,6 @@ window.onload = () => {
         game.draw(canvas, context);
 
         event.data.forEach(function (rect) {
-
             context.strokeStyle = rect.color;
             context.strokeRect(rect.x, rect.y, rect.width, rect.height);
             context.font = '11px Helvetica';
@@ -26,14 +25,40 @@ window.onload = () => {
             context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
             context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
 
-            game.checkCollision(rect);
+            if (!game.finished) {
+                if (!game.pause) {
+                    game.checkCollision(rect);
+                } else {
+                    game._round.checkCollision(canvas, rect, game);
+                }
+            } else {
+                game._end.checkCollision(canvas, rect);
+            }
         });
+
     });
 
     // Get the webcam's stream. (FOR GREEN SCREEN)
     //navigator.getUserMedia({video: true}, startStream, () => {
     //});
 };
+
+function newGame() {
+    game = new Game(canvas, context);
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 //
 // function startStream(stream) {
