@@ -8,8 +8,10 @@ De score wordt bijgehouden en getoond bovenin het roze vlak
 Om de 2.30 seconde komt er een bal bij als er minder dan 15 ballen op het scherm zijn.
 
 //TODO: tijdgebonden spel?
+Tijd is in te stellen bij game.js in ms. (Ook bij newRound() instellen!!!!)
 
 //TODO: Eindscherm met score
+Gedaan, ook voor de rondes
 
 //TODO: verbeterde interface
 
