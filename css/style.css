@@ -8,6 +8,7 @@ video, canvas {
   margin-left: 100px;
   margin-top: 10px;
   position: absolute;
+  transform: scaleX(-1);
 }
 
 canvas {

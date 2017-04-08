@@ -8,11 +8,14 @@ let context = canvas.getContext('2d');
 let game = new Game(canvas, context);
 
 window.onload = () => {
+
     let tracker = new tracking.ColorTracker(['yellow']);
+
     tracking.track('#video', tracker, {camera: true});
 
     // Game Time - loop
     tracker.on('track', event => {
+
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         game.draw(canvas, context);
@@ -22,8 +25,8 @@ window.onload = () => {
             context.strokeRect(rect.x, rect.y, rect.width, rect.height);
             context.font = '11px Helvetica';
             context.fillStyle = "#fff";
-            context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-            context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+           // context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+           // context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
 
             if (!game.finished) {
                 if (!game.pause) {

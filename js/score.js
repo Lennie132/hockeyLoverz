@@ -39,11 +39,15 @@ class Score {
 
     draw(canvas, context) {
 
+        context.save();
+        context.scale(-1,1);
         context.fillStyle = "#e63a74";
-        context.fillRect(canvas.width/2 - this._width/2, this._y, this._width, this._height);
+        context.fillRect(-canvas.width/2 - this._width/2, this._y, this._width, this._height);
         context.font = '20px Helvetica';
         context.fillStyle = "#fff";
-        context.fillText('SCORE: ' + this.score + ' PUNTEN', canvas.width/2, this._y + 35);
+        context.fillText('SCORE: ' + this.score + ' PUNTEN', -canvas.width/2, this._y + 35);
+        context.restore();
+
         context.textAlign="center";
 
         context.fill();
