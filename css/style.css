@@ -5,7 +5,6 @@
 }
 
 video, canvas {
-  margin-left: 100px;
   margin-top: 10px;
   position: absolute;
   transform: scaleX(-1);
@@ -18,4 +17,33 @@ canvas {
 .dg.ac {
   z-index: 100 !important;
   top: 10px !important;
+}
+
+#livefeed img{
+  width: 100%;
+}
+
+.navbar-default{
+  background-color:#e63a74;
+}
+
+.navbar-default .navbar-brand{
+  color:#FFF;
+  padding:0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:#FFF;
+  font-family: 'Oswald', sans-serif !important;
+  font-size:18px;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+  font-weight: bold;
+}
+
+
+
+.navbar-default .navbar-nav > li > a:hover {
+  color:#f37ea6;
 }
