@@ -4,6 +4,19 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+body{
+  background: url(https://www.hockeyloverz.nl/images/bg_pattern_3.png) #fff repeat top center;
+}
+
+h1,h2{
+   font-family: 'Oswald', sans-serif !important;
+   color:#e63a74;
+}
+
+p{
+  color:#555555;
+}
+
 video, canvas {
   margin-top: 10px;
   position: absolute;
@@ -34,7 +47,7 @@ canvas {
 
 .navbar-default .navbar-nav > li > a {
   color:#FFF;
-  font-family: 'Oswald', sans-serif !important;
+  font-family: 'Oswald', sans-serif;
   font-size:18px;
 }
 

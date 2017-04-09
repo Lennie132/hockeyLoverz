@@ -31,6 +31,8 @@ class End {
         context.save();
         context.scale(-1,1);
 
+        document.getElementById("score_3"+this._round).childNodes[3].innerHTML = score.score;
+
         context.fillStyle = "#e63a74";
         context.fillRect(-canvas.width / 2 - this._width / 2, this._y, this._width, this._height);
         context.font = '20px Helvetica';
