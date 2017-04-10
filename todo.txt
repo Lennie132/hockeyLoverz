@@ -4,6 +4,9 @@ De bal wordt verwijderd nu
 //TODO: Score bijhouden
 De score wordt bijgehouden en getoond bovenin het roze vlak
 
+//TODO: Score bijhouden in aparte tabel
+De score wordt bijgehouden en getoond in aparte tabel, team 2 moet nog worden toegevoegd voor demo (winnende team)
+
 //TODO: Ballen toevoegen
 Om de 2.30 seconde komt er een bal bij als er minder dan 15 ballen op het scherm zijn.
 
@@ -14,5 +17,6 @@ Tijd is in te stellen bij game.js in ms. (Ook bij newRound() instellen!!!!)
 Gedaan, ook voor de rondes
 
 //TODO: verbeterde interface
+Huisstijl van HockeyLoverz toegepast
 
 //TODO: Screenshot maken en aan het eind kunnen delen

@@ -55,8 +55,16 @@ canvas {
   font-weight: bold;
 }
 
-
-
 .navbar-default .navbar-nav > li > a:hover {
   color:#f37ea6;
 }
+
+#screenshot{
+  display: none;
+}
+
+#screenshot_canvas1, #screenshot_canvas2, #screenshot_canvas3 {
+  max-width: 100%;
+  position: relative;
+}
+

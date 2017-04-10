@@ -21,12 +21,12 @@ window.onload = () => {
         game.draw(canvas, context);
 
         event.data.forEach(function (rect) {
-            context.strokeStyle = rect.color;
-            context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-            context.font = '11px Helvetica';
-            context.fillStyle = "#fff";
-           // context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-           // context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+             context.strokeStyle = rect.color;
+             context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+             context.font = '11px Helvetica';
+             context.fillStyle = "#fff";
+            // context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+            // context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
 
             if (!game.finished) {
                 if (!game.pause) {
@@ -35,7 +35,7 @@ window.onload = () => {
                     game._round.checkCollision(canvas, rect, game);
                 }
             } else {
-                game._end.checkCollision(canvas, rect);
+                //game._end.checkCollision(canvas, rect);
             }
         });
 

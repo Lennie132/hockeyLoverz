@@ -29,6 +29,7 @@ class Round {
     draw(canvas, context, score) {
 
         document.getElementById("score_"+this._round).childNodes[3].innerHTML = score.score;
+        document.getElementById("score_"+this._round).childNodes[5].innerHTML = score.score - 1;
 
         context.save();
         context.scale(-1,1);

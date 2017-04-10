@@ -31,7 +31,11 @@ class End {
         context.save();
         context.scale(-1,1);
 
-        document.getElementById("score_3"+this._round).childNodes[3].innerHTML = score.score;
+        document.getElementById("score_3").childNodes[3].innerHTML = score.score;
+
+        document.getElementById("score_3").childNodes[5].innerHTML = 0;
+
+        document.getElementById("screenshot").style.display = 'block';
 
         context.fillStyle = "#e63a74";
         context.fillRect(-canvas.width / 2 - this._width / 2, this._y, this._width, this._height);
